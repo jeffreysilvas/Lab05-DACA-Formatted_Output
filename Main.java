@@ -72,9 +72,6 @@ public class Main
 		validDate = String.format("%02d/%02d/%4d", validDay, validMonth, validYear);
 		expireDate = String.format("%02d/%02d/%4d", expireDay, expireMonth, expireYear);
 		
-		//INPUT + CALCULATION SECTION
-		//N/A
-		
 		//OUTPUT SECTION
 		//printf statements allow card borders to remain aligned, even when the length of labels/data within changes
 		System.out.println("╔══════════════════════════════════════════════════════════════════════╗");
