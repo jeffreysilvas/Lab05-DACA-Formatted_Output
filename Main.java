@@ -93,7 +93,7 @@ public class Main
 		System.out.printf("║%25s%-15s%-30s║%n", ASCII_ART_8, dateOfBirth, sex);
 		System.out.printf("║%25s%-15s%-30s║%n", " ", LABEL_VALID_DATE, validDate);
 		System.out.printf("║%25s%-15s%-30s║%n", " ", LABEL_EXPIRE_DATE, expireDate);
-		System.out.printf("║%-22s%-48s║%n", ASCII_CREDIT, LABEL_REENTRY_DISCLAIMER);
+		System.out.printf("║%-25s%-45s║%n", ASCII_CREDIT, LABEL_REENTRY_DISCLAIMER);
 		System.out.println("╚══════════════════════════════════════════════════════════════════════╝");
 		
 	}
