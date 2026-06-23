@@ -20,6 +20,7 @@ public class Main
 					ASCII_ART_9 = "         `\"\"\"\"\"`         ",
 					ASCII_CREDIT =" ascii art by: jgs    ";
 
+		//INITIALIZE CARD LABELS
 		final String TITLE_USA = "UNITED STATES OF AMERICA",
 				TITLE_EAC = "EMPLOYMENT AUTHORIZATION CARD";
 		final String LABEL_SURNAME = "Surname", LABEL_GIVEN_NAME = "Given Name", LABEL_USCIS_NUM = "USCIS#",
@@ -50,7 +51,8 @@ public class Main
 		birthCountry = "Guatemala";
 		termsAndConditions = "None";
 		sex = 'M';
-		
+
+		//variables relating to specific dates
 		birthMonth = "JAN";
 		uscisNum1 = 12;
 		uscisNum2 = 4;
@@ -65,38 +67,36 @@ public class Main
 		expireYear = 2022;
 		
 		//additional variables to help cleanup long print's below
-		uscisNum = uscisNum1 + "-" + uscisNum2 + "-" + uscisNum3;
-		dateOfBirth = birthDay + " " + birthMonth + " " + birthYear;
-		validDate = validMonth + "/" + validDay + "/" + validYear;
-		expireDate = expireMonth + "/" + expireDay + "/" + expireYear;
+		uscisNum = String.format("%03d-%03d-%03d", uscisNum1, uscisNum2, uscisNum3);
+		dateOfBirth = String.format("%02d %3s %4d", birthDay, birthMonth, birthYear);
+		validDate = String.format("%02d/%02d/%4d", validDay, validMonth, validYear);
+		expireDate = String.format("%02d/%02d/%4d", expireDay, expireMonth, expireYear);
 		
 		//INPUT + CALCULATION SECTION
 		//N/A
 		
 		//OUTPUT SECTION
+		//printf statements allow card borders to remain aligned, even when the length of labels/data within changes
 		System.out.println("╔══════════════════════════════════════════════════════════════════════╗");
 		System.out.println("║           " + TITLE_USA + "                                   ║");
 		System.out.println("║                               " + TITLE_EAC + "          ║");
 		
-		System.out.println("║                         " + LABEL_SURNAME + "║");
-		System.out.println("║                         " + surname + "║");
-		System.out.println("║" + ASCII_ART_0 + LABEL_GIVEN_NAME + "║");
-		System.out.println("║" + ASCII_ART_1 + givenName + "║");
-		System.out.println("║" + ASCII_ART_2 + LABEL_USCIS_NUM + LABEL_CATEGORY + LABEL_CARD_NUM + "║");
-		System.out.println("║" + ASCII_ART_3 + uscisNum + category + cardNum + "║");
-		
-		System.out.println("║" + ASCII_ART_4 + LABEL_BIRTH_COUNTRY + "║");
-		System.out.println("║" + ASCII_ART_5 + birthCountry + "║");
-		System.out.println("║" + ASCII_ART_6 + LABEL_TERMS_CONDITIONS + "║");
-		System.out.println("║" + ASCII_ART_7 + termsAndConditions + "║");
-		
-		System.out.println("║" + ASCII_ART_8 + LABEL_BIRTH_DATE + LABEL_SEX + "║");
-		System.out.println("║" + ASCII_ART_9 + dateOfBirth + sex + "║");
-		
-		System.out.println("║                         " + LABEL_VALID_DATE + validDate + "║");
-		System.out.println("║                         " + LABEL_EXPIRE_DATE + expireDate + "║");
-		
-		System.out.println("║" + ASCII_CREDIT + LABEL_REENTRY_DISCLAIMER + "║");
+		System.out.printf("║%25s%-45s║%n", " ", LABEL_SURNAME);
+		System.out.printf("║%25s%-45s║%n", " ", surname);
+		System.out.printf("║%25s%-45s║%n", ASCII_ART_0, LABEL_GIVEN_NAME);
+		System.out.printf("║%25s%-45s║%n", ASCII_ART_1, givenName);
+		System.out.printf("║%25s%-15s%-15s%-15s║%n", ASCII_ART_2, LABEL_USCIS_NUM, LABEL_CATEGORY, LABEL_CARD_NUM);
+		System.out.printf("║%25s%-15s%-15s%-15s║%n", ASCII_ART_3, uscisNum, category, cardNum);
+
+		System.out.printf("║%25s%-45s║%n", ASCII_ART_4, LABEL_BIRTH_COUNTRY);
+		System.out.printf("║%25s%-45s║%n", ASCII_ART_5, birthCountry);
+		System.out.printf("║%25s%-45s║%n", ASCII_ART_6, LABEL_TERMS_CONDITIONS);
+		System.out.printf("║%25s%-45s║%n", ASCII_ART_7, termsAndConditions);
+		System.out.printf("║%25s%-15s%-30s║%n", ASCII_ART_8, LABEL_BIRTH_DATE, LABEL_SEX);
+		System.out.printf("║%25s%-15s%-30s║%n", ASCII_ART_8, dateOfBirth, sex);
+		System.out.printf("║%25s%-15s%-30s║%n", " ", LABEL_VALID_DATE, validDate);
+		System.out.printf("║%25s%-15s%-30s║%n", " ", LABEL_EXPIRE_DATE, expireDate);
+		System.out.printf("║%-22s%-48s║%n", ASCII_CREDIT, LABEL_REENTRY_DISCLAIMER);
 		System.out.println("╚══════════════════════════════════════════════════════════════════════╝");
 		
 	}
